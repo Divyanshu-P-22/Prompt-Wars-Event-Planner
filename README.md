@@ -194,7 +194,7 @@ src/
 │   ├── dashboard/page.tsx        # Events dashboard
 │   ├── events/
 │   │   ├── new/page.tsx          # AI Event Wizard
-│   │   └── [id]/page.tsx        # Event detail (tabbed)
+│   │   └── [id]/page.tsx         # Event detail (tabbed)
 │   └── api/ai/                   # API routes for Gemini
 │       ├── generate-plan/        # Full plan generation
 │       ├── budget-advice/        # Budget optimization
@@ -203,7 +203,7 @@ src/
 ├── components/
 │   ├── ui/                       # Reusable UI primitives
 │   ├── layout/                   # Header, Footer
-│   └── event-detail/            # Tab components
+│   └── event-detail/             # Tab components
 ├── context/                      # React Context providers
 ├── lib/                          # Utilities & AI client
 └── types/                        # TypeScript definitions
@@ -226,7 +226,7 @@ src/
 
 ## 📝 License
 
-This project was built by Divyanshu Prajapat for the **PromptWars Virtual Hackathon** by Hack2skill × Google for Developers.
+This project was built by **Divyanshu Prajapat** for the **PromptWars Virtual Hackathon** by Hack2skill × Google for Developers.
 
 ---
 
