@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================================
+   CelebrateAI Design System
+   A celebration-themed design system with violet/purple primary,
+   rose secondary, and amber accent colors.
+   =================================================================== */
+
+/* ===== Base Layer ===== */
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-violet-50/30 via-white to-rose-50/30
+      text-slate-900 antialiased min-h-screen;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  h2 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  h4 {
+    @apply text-xl font-semibold;
+  }
+}
+
+/* ===== Component Layer ===== */
+@layer components {
+  /* Glassmorphism card with subtle shadow */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/40
+      shadow-xl shadow-violet-500/5 rounded-2xl;
+  }
+
+  /* Gradient text for headings */
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 via-purple-600 to-rose-500
+      bg-clip-text text-transparent;
+  }
+
+  /* Primary action button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+      bg-gradient-to-r from-violet-600 to-purple-600
+      text-white px-6 py-3 rounded-xl font-semibold text-sm
+      hover:from-violet-700 hover:to-purple-700
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2
+      transition-all duration-200 shadow-lg shadow-violet-500/25
+      active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary outline button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+      border-2 border-violet-200 text-violet-700
+      px-6 py-3 rounded-xl font-semibold text-sm
+      hover:bg-violet-50 hover:border-violet-300
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2
+      transition-all duration-200 active:scale-[0.98]
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Danger button */
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2
+      bg-red-500 text-white px-6 py-3 rounded-xl font-semibold text-sm
+      hover:bg-red-600 transition-all duration-200
+      shadow-lg shadow-red-500/25 active:scale-[0.98];
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+      text-gray-600 px-4 py-2 rounded-xl font-medium text-sm
+      hover:bg-gray-100 transition-all duration-200 active:scale-[0.98];
+  }
+
+  /* Styled input field */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200
+      bg-white/80 backdrop-blur-sm
+      text-slate-900 placeholder:text-gray-400
+      focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-400
+      transition-all duration-200;
+  }
+
+  /* Max-width container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply glass-card p-6 flex flex-col gap-2;
+  }
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* ===== Selection ===== */
+::selection {
+  @apply bg-violet-200 text-violet-900;
+}
+
+/* ===== Focus Visible ===== */
+:focus-visible {
+  @apply outline-none ring-2 ring-violet-500 ring-offset-2;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
