@@ -85,27 +85,27 @@ An intelligent, multi-step conversational flow that captures your event vision a
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Next.js Frontend                      │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │
-│  │ Landing   │ │Dashboard │ │ Wizard   │ │  Event   │   │
-│  │  Page     │ │  Page    │ │  Page    │ │ Detail   │   │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────┘   │
-│                       │                                  │
+│                    Next.js Frontend                     │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐    │
+│  │ Landing  │ │Dashboard │ │ Wizard   │ │  Event   │    │
+│  │  Page    │ │  Page    │ │  Page    │ │ Detail   │    │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘    │
+│                       │                                 │
 │              ┌────────▼────────┐                        │
 │              │  React Context  │                        │
 │              │  + localStorage │                        │
 │              └────────┬────────┘                        │
 ├───────────────────────┼─────────────────────────────────┤
-│                Next.js API Routes                        │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │
-│  │ Generate  │ │ Budget   │ │  Reco-   │ │  AI      │   │
-│  │  Plan     │ │ Advice   │ │ mmend    │ │  Chat    │   │
-│  └─────┬────┘ └─────┬────┘ └─────┬────┘ └─────┬────┘   │
+│                Next.js API Routes                       │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐    │
+│  │ Generate │ │ Budget   │ │  Reco-   │ │  AI      │    │
+│  │  Plan    │ │ Advice   │ │ mmend    │ │  Chat    │    │
+│  └─────┬────┘ └─────┬────┘ └─────┬────┘ └─────┬────┘    │
 │        └────────┬────┴────────┬───┴────────┬───┘        │
 ├─────────────────┼─────────────┼────────────┼────────────┤
 │          ┌──────▼─────────────▼────────────▼──────┐     │
-│          │          Google Gemini AI API           │     │
-│          │        (gemini-2.0-flash model)         │     │
+│          │          Google Gemini AI API          │     │
+│          │        (gemini-2.0-flash model)        │     │
 │          └────────────────────────────────────────┘     │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -226,7 +226,7 @@ src/
 
 ## 📝 License
 
-This project was built for the **PromptWars Virtual Hackathon** by Hack2skill × Google for Developers.
+This project was built by Divyanshu Prajapat for the **PromptWars Virtual Hackathon** by Hack2skill × Google for Developers.
 
 ---
 
