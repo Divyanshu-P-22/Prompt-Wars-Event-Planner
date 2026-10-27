@@ -28,7 +28,7 @@ Event planning is overwhelming. Organizing weddings, milestone birthdays, and co
 
 ### Core Logic & User Workflow
 1. **Intelligent Capture (Wizard):** The user specifies event type (Wedding, Birthday, Community), dates, attendee scale, overall budget, and qualitative preferences (aesthetic styles, cultural nuances, catering requirements).
-2. **Context-Aware GenAI Generation:** Next.js server-side API routes sanitize and structure the user request, prompt **Google Gemini (gemini-2.0-flash)** with detailed persona constraints, and receive strictly typed JSON payloads.
+2. **Context-Aware GenAI Generation:** Next.js server-side API routes sanitize and structure the user request, prompt **Google Gemini (gemini-2.5-flash)** with detailed persona constraints, and receive strictly typed JSON payloads.
 3. **Structured Plan Synthesis:** Gemini formulates:
    - Dynamic Milestone Timelines with priority tiers (Critical, High, Medium, Low) and relative date offsets.
    - Comprehensive Budget Breakdown allocating percentage weights and estimated costs across industry-standard vendor categories.
@@ -105,7 +105,7 @@ An intelligent, multi-step conversational flow that captures your event vision a
 ├─────────────────┼─────────────┼────────────┼────────────┤
 │          ┌──────▼─────────────▼────────────▼──────┐     │
 │          │          Google Gemini AI API          │     │
-│          │        (gemini-2.0-flash model)        │     │
+│          │        (gemini-2.5-flash model)        │     │
 │          └────────────────────────────────────────┘     │
 └─────────────────────────────────────────────────────────┘
 ```

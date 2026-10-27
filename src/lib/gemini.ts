@@ -24,7 +24,7 @@ import { formatCurrency } from './utils';
 // Initialize the Google Generative AI client with the server-side environment key
 const apiKey = process.env.GEMINI_API_KEY || '';
 const genAI = new GoogleGenerativeAI(apiKey);
-const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
 /**
  * Extracts and parses JSON content from a model response string,
