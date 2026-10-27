@@ -418,9 +418,41 @@ function getFallbackRecommendations(category: string): AIRecommendation[] {
  * Creates fallback chat assistance when Gemini is unavailable.
  */
 function getFallbackChatResponse(userMessage: string, event: CelebrateEvent): string {
-  return `I am here to help you plan **${event.name}**! Regarding: "${userMessage}"
+  const query = userMessage.toLowerCase();
+  const guestCount = event.guestCount || 5;
+  const location = event.location || 'home';
+  const budget = event.totalBudget || 5000;
 
-For your celebration with **${event.guestCount} guests** and a **${formatCurrency(event.totalBudget)}** budget in **${event.location}**, my recommendation is to keep your core timeline milestones updated and ensure all vendor contracts have defined cancellation and buffer terms.
+  // Entertainment / Fun queries
+  if (query.includes('fun') || query.includes('entertainment') || query.includes('activity') || query.includes('game') || query.includes('music')) {
+    return `For your ${event.type || 'celebration'} at ${location} with ${guestCount} guests, here are direct ideas to make the party full of fun:
 
-Feel free to ask me to analyze your budget line items, suggest creative theme palettes, or review your vendor checklists!`;
+- **Party Games**: Dumb Charades, party trivia tailored to the guest of honor, and a mini scavenger or treasure hunt.
+- **Music & Vibe**: Create a collaborative shared playlist where everyone adds 3 favorite tracks, and host a mini dance challenge or lip-sync battle.
+- **Interactive Food Station**: Set up a DIY pizza, taco, snack, or mocktail/cocktail station where guests can customize their bites.
+- **Capture Memories**: Create a fun photo booth nook with simple props and record short, funny video messages.
+- **Signature Surprise**: Organize a special reveal moment, cake ceremony, or a heartfelt group toast.`;
+  }
+
+  // Budget reduction queries
+  if (query.includes('budget') || query.includes('reduce') || query.includes('cost') || query.includes('saving') || query.includes('cheap') || query.includes('cut')) {
+    const targetBudget = Math.round(budget * 0.7);
+    const savings = budget - targetBudget;
+    return `To help reduce your ${formatCurrency(budget)} budget, here is a practical plan:
+
+First, set a target budget of **${formatCurrency(targetBudget)}** — an illustrative potential saving of **${formatCurrency(savings)} (30%)** (this is an illustrative target, not a calculated estimate from actual receipts):
+
+- **Food & Beverage First**: Prioritize core food and cake, compare local catering or buffet options, and buy only what you need.
+- **DIY Decor**: Use fairy lights, candles, and printable banners instead of hiring an expensive commercial decorator.
+- **Streamlined Entertainment**: Use a curated playlist and high-quality Bluetooth speaker instead of hiring a costly DJ or live band.
+- **Digital Invites**: Send stylish digital invitations via WhatsApp or email to save on printing and postage.
+- **Contingency Reserve**: Set aside 10% of your reduced budget as a reserve for unexpected last-minute expenses.`;
+  }
+
+  // General specific fallback
+  return `Regarding your question about **"${userMessage}"** for **${event.name}** (${guestCount} guests at ${location}, budget: ${formatCurrency(budget)}):
+
+- **Direct Focus**: For a party of this scale, prioritize guest engagement, good food, and a seamless flow over complex logistics.
+- **Tailored Suggestion**: Cater specifically to your ${guestCount} attendees by keeping activities interactive and personal.
+- **Next Step**: Would you like specific game ideas, a minute-by-minute timeline, or cost-saving tips for this?`;
 }
